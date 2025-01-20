@@ -1,6 +1,6 @@
 # BukuBaca
 Aplikasi E-Commerce Buku Online
-!public/favicon.ico
+
 # Deskripsi
 BukuBaca adalah aplikasi e-commerce buku online yang memudahkan pengguna mencari dan membeli buku favorit mereka. Aplikasi ini dibangun dengan Laravel 11 dan Bootstrap 5.
 
@@ -31,8 +31,8 @@ Silakan fork repository ini dan kirimkan pull request untuk berkontribusi.
 Aplikasi ini dilisensikan di bawah LICENSE.
 
 # Kontak
-- Email: [alamat email Anda]
-- GitHub: [alamat GitHub Anda]
+- Email: khusainimukhamad@gmail.com
+- GitHub: mukhamad-khusaini
 
 # Perubahan
 - Versi 1.0: Rilis awal aplikasi BukuBaca.

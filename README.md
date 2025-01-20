@@ -2,7 +2,7 @@
 Aplikasi E-Commerce Buku Online
 
 # Deskripsi
-BukuBaca adalah aplikasi e-commerce buku online yang memudahkan pengguna mencari dan membeli buku favorit mereka. Aplikasi ini dibangun dengan Laravel 11 dan Bootstrap 5.
+BukuBaca adalah aplikasi e-commerce buku online yang memudahkan pengguna mencari dan membeli buku favorit mereka. Aplikasi ini dibangun dengan Laravel 11 dan tailwindcss.
 
 # Fitur
 - Katalog buku yang lengkap dan terupdate
@@ -20,9 +20,9 @@ BukuBaca adalah aplikasi e-commerce buku online yang memudahkan pengguna mencari
 
 # Teknologi
 - Laravel 11
-- Bootstrap 5
+- Tailwindcss
 - MySQL
-- PHP 8.1
+- PHP 8.3
 
 # Kontribusi
 Silakan fork repository ini dan kirimkan pull request untuk berkontribusi.

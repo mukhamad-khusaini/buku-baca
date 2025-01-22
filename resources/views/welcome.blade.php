@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="/css/default.css">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -18,10 +18,33 @@
 </head>
 
 <body>
-    <header class="flex flex-row gap-4 || px-4 py-5">
-        <div class="basis-3/4 h-20 bg-slate-500"></div>
-        <div class="basis-1/4 h-20 bg-slate-500"></div>
-    </header>
+    <x-top />
+    <main class="px-6">
+        <section>
+            <form action="/" class="flex flex-row justify-between">
+                <input
+                    class="w-[75%] || inline-block || italic placeholder:text-redMain placeholder:opacity-50 || outline-none border-none rounded-md || bg-greyLight"
+                    type="text" name="search" id="search" placeholder="Temukan inspirasimu disini!">
+                <button class="w-[20%] || flex justify-center items-center || rounded-md || bg-greyLight">
+                    <img class="w-4 || inline-block " src="/img/search-icon.png" alt="search">
+                </button>
+            </form>
+        </section>
+        <x-card-group class="mt-7" title="Terbaik untukmu!">
+            @for ($i = 0; $i < 5; $i++)
+                <div class="flex-none w-28 aspect-[88/128] bg-redMain rounded-lg"></div>
+            @endfor
+        </x-card-group>
+        <x-card-group class="mt-16" title="Ambil dari genre">
+            @for ($i = 0; $i < 5; $i++)
+                <x-card-tag label="Horror" />
+            @endfor
+        </x-card-group>
+        <section class="flex flex-row flex-nowrap gap-4 justify-center items-center || mt-7">
+            <x-card-book price="34.000" title="Descendant of The Sun" author="Logan Paul" />
+            <x-card-book price="34.000" title="Descendant of The Sun" author="Logan Paul" />
+        </section>
+    </main>
 </body>
 
 </html>

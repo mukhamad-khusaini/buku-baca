@@ -15,6 +15,12 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                ibm: ["IBM Plex Sans", ...defaultTheme.fontFamily.serif],
+            },
+            colors: {
+                redMain: "#B54A4A",
+                greyMain: "#545454",
+                greyLight: "#CECECE",
             },
         },
     },

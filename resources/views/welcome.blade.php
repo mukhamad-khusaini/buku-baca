@@ -40,11 +40,13 @@
                 <x-card-tag label="Horror" />
             @endfor
         </x-card-group>
-        <section class="flex flex-row flex-nowrap gap-4 justify-center items-center || mt-7">
-            <x-card-book price="34.000" title="Descendant of The Sun" author="Logan Paul" />
-            <x-card-book price="34.000" title="Descendant of The Sun" author="Logan Paul" />
+        <section class="grid grid-cols-2 gap-4 justify-center items-center || mt-7">
+            @for ($i = 0; $i < 5; $i++)
+                <x-card-book price="34.000" title="Descendant of The Sun" author="Logan Paul" />
+            @endfor
         </section>
     </main>
+    <x-bottom />
 </body>
 
 </html>

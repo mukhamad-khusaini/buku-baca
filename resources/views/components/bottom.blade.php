@@ -9,6 +9,6 @@
         <a class="inline-block text-greyMain text-sm" href="#">Profile Account</a>
     </div>
     <div class="w-full bg-redMain py-1">
-        <p class="text-white text-center text-sm font-ibm">&copy; Copyright 2025 | All right reserved by BukuBaca</p>
+        <p class="text-white text-center text-sm font-ibm">&copy; Copyright 2025 by BukuBaca</p>
     </div>
 </footer>

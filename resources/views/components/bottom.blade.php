@@ -5,7 +5,7 @@
     </div>
     <div class="flex flex-col gap-1 justify-center items-center">
         <a class="inline-block text-greyMain text-sm" href="#">Shopping Cart</a>
-        <a class="inline-block text-greyMain text-sm" href="#">Catalog</a>
+        <a class="inline-block text-greyMain text-sm" href="/catalog">Catalog</a>
         <a class="inline-block text-greyMain text-sm" href="#">Profile Account</a>
     </div>
     <div class="w-full bg-redMain py-1">

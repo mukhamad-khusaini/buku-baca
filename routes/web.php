@@ -21,4 +21,8 @@ Route::get('/catalog', function () {
     return view('catalog');
 });
 
+Route::get('detail', function (){
+    return view('detail');
+});
+
 require __DIR__.'/auth.php';

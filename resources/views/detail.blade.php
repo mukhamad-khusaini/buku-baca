@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="grid grid-cols-5 gap-5 || bg-gray-800 p-4">
+    <section class="grid grid-cols-5 gap-5 || bg-gray-800 p-4">
         <div class="w-full || relative || col-span-2">
             <div
                 class="w-28 h aspect-[11/16] || absolute -bottom-1/3 left-1/2 -translate-x-1/2 || rounded-md || bg-redMain">
@@ -44,7 +44,64 @@
                 </svg>
             </button>
         </div>
-    </div>
+    </section>
+    <section class="mt-20 px-6 || flex flex-col items-start gap-2">
+        <h2 class="font-ibm text-xl text-redMain font-bold">Sinopsis</h2>
+        <p class="font-ibm text-sm text-greyMain font-bold">Mistery | Romance | Fights</p>
+        <p class="font-ibm text-sm text-greyMain">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+            corrupti unde quam quibusdam accusantium
+            commodi laborum consequatur! Libero repudiandae unde soluta dignissimos commodi cum, voluptatem provident
+            iste culpa dicta similique?</p>
+    </section>
+    <section class="mt-10 px-6">
+        <x-card-group title="Buku Sejenis">
+            @for ($i = 0; $i < 5; $i++)
+                <div class="flex-none w-28 aspect-[88/128] bg-redMain rounded-lg"></div>
+            @endfor
+        </x-card-group>
+    </section>
+    <section class="px-6 mt-10">
+        <div class="flex flex-col justify-center items-center gap-2">
+            <h2 class="text-xl text-greyMain font-ibm">Penilaian Anda</h2>
+            <div class="w-auto || flex justify-center items-center || border-2 border-greyLight rounded-full px-4 py-0">
+                <p id="sss" class="text-4xl text-greyLight">
+                    @for ($i = 0; $i < 5; $i++)
+                        <span id="userRating-{{ $i }}">
+                            ★
+                        </span>
+                    @endfor
+                </p>
+            </div>
+        </div>
+        <div class="mt-10">
+            <h2 class="text-lg text-redMain font-ibm font-bold">Ratings</h2>
+            <div class="p-4 bg-white rounded-lg shadow-md || flex flex-col space-y-4">
+                @foreach (['Paul Agony', 'Shiska Raul', 'Mita Ignation'] as $user)
+                    <x-single-rating user="{{ $user }}" date="12 Agustus 2023" />
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <x-bottom class="mt-10" />
+
+    <script>
+        let ratUnit = [];
+        for (let i = 0; i < 5; i++) {
+            ratUnit.push(document.querySelector(`#userRating-${i}`));
+        }
+
+
+        for (let i = 0; i < ratUnit.length; i++) {
+            ratUnit[i].addEventListener("mouseover", () => {
+                for (let x = 0; x <= i; x++) {
+                    ratUnit[x].style.color = "yellow";
+                }
+                for (let x = 4; x > i; x--) {
+                    ratUnit[x].style.color = "";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

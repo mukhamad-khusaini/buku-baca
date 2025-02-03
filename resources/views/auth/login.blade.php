@@ -5,6 +5,7 @@
     <div class="bg-pink-200 p-8 rounded-lg shadow-md w-96">
         <h2 class="text-center text-2xl font-bold text-red-700 mb-6">Masuk</h2>
         <form method="POST" action="{{ route('login') }}">
+            @csrf
             <div class="mb-4">
                 <x-input-label for="email" :value="__('Email')" />
                 <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"

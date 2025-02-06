@@ -19,7 +19,7 @@
     <section class="bg-gray-100 flex flex-col items-center">
         <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-md mb-4">
             <div class="flex items-center justify-start gap-9 || mb-4">
-                <a href="#" class="text-gray-600">
+                <a href="/cart" class="text-gray-600">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
@@ -34,11 +34,11 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex-none w-12 aspect-[9/13] bg-redMain rounded-lg"></div>
                             <div>
-                                <h3 class="text-lg font-semibold">Wraith of Nation on a Pierce Down Town</h3>
+                                <h3 class="text-md font-semibold">Wraith of Nation on a Pierce Down Town</h3>
                                 <p class="text-sm text-gray-600">Bestseller | Romance | Public</p>
                             </div>
                         </div>
-                        <span class="text-md font-semibold">Rp 134.000</span>
+                        <span class="text-sm text-center font-semibold">Rp 134.000</span>
                     </div>
                 @endfor
             </div>

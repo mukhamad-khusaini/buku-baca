@@ -17,7 +17,7 @@ class BookCategorySeeder extends Seeder
         $categories = Category::factory()->count(5)->create();
         $books = Book::factory()->count(20)->create();
         foreach ($books as $book) {
-            $randomCategories=$categories->random(rand(1,4))->pluck('id');
+            $randomCategories=$categories->random(rand(1,3))->pluck('id');
             $book->categories()->attach($randomCategories);
         }
     }

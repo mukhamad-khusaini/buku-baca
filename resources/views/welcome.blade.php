@@ -38,10 +38,10 @@
                 <x-card-tag label="Horror" />
             @endfor
         </x-card-group>
-        <section class="grid grid-cols-2 gap-4 justify-center items-center || mt-7">
-            @for ($i = 0; $i < 5; $i++)
-                <x-card-book price="34.000" title="Descendant of The Sun" author="Logan Paul" />
-            @endfor
+        <section class="grid grid-cols-2 gap-4 justify-center items-stretch || mt-7">
+            @foreach ($books as $book)
+                <x-card-book price="{{ $book->price }}" title="{{ $book->title }}" author="{{ $book->author }}" />
+            @endforeach
         </section>
     </main>
     <x-bottom />

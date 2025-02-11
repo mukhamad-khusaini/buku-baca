@@ -29,14 +29,14 @@
             </form>
         </section>
         <x-card-group class="mt-7" title="Terbaik untukmu!">
-            @for ($i = 0; $i < 5; $i++)
+            @foreach ($books as $book)
                 <div class="flex-none w-28 aspect-[88/128] bg-redMain rounded-lg"></div>
-            @endfor
+            @endforeach
         </x-card-group>
         <x-card-group class="mt-16" title="Ambil dari genre">
-            @for ($i = 0; $i < 5; $i++)
-                <x-card-tag label="Horror" />
-            @endfor
+            @foreach ($categories as $category)
+                <x-card-tag label="{{ $category->name }}" />
+            @endforeach
         </x-card-group>
         <section class="grid grid-cols-2 gap-4 justify-center items-stretch || mt-7">
             @foreach ($books as $book)

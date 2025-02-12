@@ -30,17 +30,20 @@
         </section>
         <x-card-group class="mt-7" title="Terbaik untukmu!">
             @foreach ($books as $book)
-                <div class="flex-none w-28 aspect-[88/128] bg-redMain rounded-lg"></div>
+                <div class="flex-none w-28 aspect-[88/128] bg-redMain rounded-lg || overflow-hidden">
+                    <img src="{{ $book->image_url }}" alt="cover" class="h-full || object-cover">
+                </div>
             @endforeach
         </x-card-group>
         <x-card-group class="mt-16" title="Ambil dari genre">
             @foreach ($categories as $category)
-                <x-card-tag label="{{ $category->name }}" />
+                <x-card-tag label="{{ $category->name }}" icon="{{ $category->icon }}" />
             @endforeach
         </x-card-group>
         <section class="grid grid-cols-2 gap-4 justify-center items-stretch || mt-7">
             @foreach ($books as $book)
-                <x-card-book price="{{ $book->price }}" title="{{ $book->title }}" author="{{ $book->author }}" />
+                <x-card-book price="{{ $book->price }}" title="{{ $book->title }}" author="{{ $book->author }}"
+                    image_url="{{ $book->image_url }}" />
             @endforeach
         </section>
     </main>

@@ -19,12 +19,13 @@
     <section class="grid grid-cols-5 gap-5 || bg-gray-800 p-4">
         <div class="w-full || relative || col-span-2">
             <div
-                class="w-28 h aspect-[11/16] || absolute -bottom-1/3 left-1/2 -translate-x-1/2 || rounded-md || bg-redMain">
+                class="w-28 h aspect-[11/16] || overflow-hidden || absolute -bottom-1/3 left-1/2 -translate-x-1/2 || rounded-md || bg-redMain">
+                <img class="h-full || object-cover" src="/{{ $book->image_url }}" alt="cover">
             </div>
         </div>
         <div class="flex flex-col items-start || relative || col-span-3">
-            <h2 class="text-white text-lg font-bold || mt-7">Something +Matter</h2>
-            <p class="text-gray-400">By Nyoman Ikure</p>
+            <h2 class="text-white text-lg font-bold || mt-7">{{ $book->title }}</h2>
+            <p class="text-gray-400">By {{ $book->author }}</p>
             <div class="flex justify-center items-center my-2">
                 <span class="text-yellow-400">
                     @for ($i = 0; $i < 5; $i++)
@@ -33,7 +34,7 @@
                 </span>
                 <span class="text-white ml-2">5.0</span>
             </div>
-            <p class="text-white text-xl font-semibold || mb-7">Rp 34.000</p>
+            <p class="text-white text-xl font-semibold || mb-7">Rp {{ $book->price }}</p>
             <button class="absolute -bottom-9 || bg-redMain text-white py-2 px-4 rounded-full">Beli
                 Sekarang</button>
             <button class="absolute -bottom-10 right-2 || bg-redMain text-white p-3 rounded-full mt-4" type="button">
@@ -47,11 +48,16 @@
     </section>
     <section class="mt-20 px-6 || flex flex-col items-start gap-2">
         <h2 class="font-ibm text-xl text-redMain font-bold">Sinopsis</h2>
-        <p class="font-ibm text-sm text-greyMain font-bold">Mistery | Romance | Fights</p>
-        <p class="font-ibm text-sm text-greyMain">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-            corrupti unde quam quibusdam accusantium
-            commodi laborum consequatur! Libero repudiandae unde soluta dignissimos commodi cum, voluptatem provident
-            iste culpa dicta similique?</p>
+        <p class="font-ibm text-sm text-greyMain font-bold">
+            @for ($i = 0; $i < count($book->categories); $i++)
+                @if ($i == count($book->categories) - 1)
+                    {{ $book->categories[$i]->name }}
+                @else
+                    {{ $book->categories[$i]->name }} |
+                @endif
+            @endfor
+        </p>
+        <p class="font-ibm text-sm text-greyMain">{{ $book->description }}</p>
     </section>
     <section class="mt-10 px-6">
         <x-card-group title="Buku Sejenis">

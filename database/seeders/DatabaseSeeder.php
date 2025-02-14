@@ -13,8 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Create default user
+        User::factory()->create([
+            'name'=>'Isildur',
+            'email'=>'isildur@gmail.com',
+            'password'=>'$2y$12$DMv.dxRvuRuqFBLIm.aL1OT.zltIi796u5AToKHLPT2I7ezZKLB5K',
+        ]);
 
+        // Other goes here
         $this->call([BookCategorySeeder::class]);
     }
 }

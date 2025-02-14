@@ -20,6 +20,7 @@ class BookFactory extends Factory
             'title' => $this->faker->sentence(3), // Judul dengan 3 kata
             'author' => $this->faker->name,
             'price' => $this->faker->randomFloat(2, 10, 100), // Harga antara 10 hingga 100
+            'description' => $this->faker->paragraph(4),
             'image_url' => 'img/profile.jpeg',
         ];
     }

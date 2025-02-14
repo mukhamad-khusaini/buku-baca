@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Models\Book;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
@@ -28,8 +29,8 @@ Route::get('/catalog', function () {
     return view('catalog');
 });
 
-Route::get('/detail', function (){
-    return view('detail');
+Route::get('/detail/{id}', function (string $id){
+    return view('detail', ['book'=>Book::where('id', $id)->first()]);
 });
 
 require __DIR__.'/auth.php';

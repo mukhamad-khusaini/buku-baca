@@ -32,7 +32,7 @@
                         ★
                     @endfor
                 </span>
-                <span class="text-white ml-2">5.0</span>
+                <span class="text-white ml-2">5</span>
             </div>
             <p class="text-white text-xl font-semibold || mb-7">Rp {{ $book->price }}</p>
             <button class="absolute -bottom-9 || bg-redMain text-white py-2 px-4 rounded-full">Beli
@@ -61,9 +61,11 @@
     </section>
     <section class="mt-10 px-6">
         <x-card-group title="Buku Sejenis">
-            @for ($i = 0; $i < 5; $i++)
-                <div class="flex-none w-28 aspect-[88/128] bg-redMain rounded-lg"></div>
-            @endfor
+            @foreach ($otherBooks as $book)
+                <div class="flex-none w-28 aspect-[88/128] bg-redMain rounded-lg || overflow-hidden">
+                    <img class="h-full || object-cover" src="/{{ $book->image_url }}" alt="cover">
+                </div>
+            @endforeach
         </x-card-group>
     </section>
     <section class="px-6 mt-10">

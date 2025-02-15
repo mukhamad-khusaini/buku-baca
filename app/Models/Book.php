@@ -19,4 +19,9 @@ class Book extends Model
     {
         return $this->hasMany(Order::class);
     }
+
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
 }

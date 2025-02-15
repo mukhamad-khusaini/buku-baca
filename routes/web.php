@@ -30,7 +30,8 @@ Route::get('/catalog', function () {
 });
 
 Route::get('/detail/{id}', function (string $id){
-    return view('detail', ['book'=>Book::where('id', $id)->first()]);
+    $otherBooks=Book::all();
+    return view('detail', ['book'=>Book::where('id', $id)->first(), 'otherBooks' => $otherBooks]);
 });
 
 require __DIR__.'/auth.php';

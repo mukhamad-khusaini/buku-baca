@@ -29,10 +29,14 @@
             <div class="flex justify-center items-center my-2">
                 <span class="text-yellow-400">
                     @for ($i = 0; $i < 5; $i++)
-                        ★
+                        @if ($i < $book->avarageStar())
+                            <span class="text-yellow-400">★</span>
+                        @else
+                            <span class="text-greyLight">★</span>
+                        @endif
                     @endfor
                 </span>
-                <span class="text-white ml-2">5</span>
+                <span class="text-white ml-2">{{ $book->avarageStar() }}</span>
             </div>
             <p class="text-white text-xl font-semibold || mb-7">Rp {{ $book->price }}</p>
             <button class="absolute -bottom-9 || bg-redMain text-white py-2 px-4 rounded-full">Beli
@@ -84,8 +88,9 @@
         <div class="mt-10">
             <h2 class="text-lg text-redMain font-ibm font-bold">Ratings</h2>
             <div class="p-4 bg-white rounded-lg shadow-md || flex flex-col space-y-4">
-                @foreach (['Paul Agony', 'Shiska Raul', 'Mita Ignation'] as $user)
-                    <x-single-rating user="{{ $user }}" date="12 Agustus 2023" />
+                @foreach ($book->ratings as $sing)
+                    <x-single-rating user="{{ $sing->user->name }}" date="{{ $sing->created_at }}"
+                        value="{{ $sing->value }}" />
                 @endforeach
             </div>
         </div>

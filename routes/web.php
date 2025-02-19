@@ -33,9 +33,7 @@ Route::get('/catalog', function () {
 Route::get('/detail/{id}', function (string $id){
     $book=Book::findOrFail($id);
     $otherBooks=Book::whereHas('categories', function($query) use ($book) {
-        $query->whereIn('categories.id', array_map(function($i){
-            return $i['id'];
-        },$book->categories->toArray()));
+        $query->whereIn('categories.id', $book->categories->pluck('id')->toArray());
     })->get();
     return view('detail', ['book'=> $book, 'otherBooks' => $otherBooks]);
 });

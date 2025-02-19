@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
 use App\Models\Book;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
@@ -30,8 +31,13 @@ Route::get('/catalog', function () {
 });
 
 Route::get('/detail/{id}', function (string $id){
-    $otherBooks=Book::all();
-    return view('detail', ['book'=>Book::findOrFail($id), 'otherBooks' => $otherBooks]);
+    $book=Book::findOrFail($id);
+    $otherBooks=Book::whereHas('categories', function($query) use ($book) {
+        $query->whereIn('categories.id', array_map(function($i){
+            return $i['id'];
+        },$book->categories->toArray()));
+    })->get();
+    return view('detail', ['book'=> $book, 'otherBooks' => $otherBooks]);
 });
 
 require __DIR__.'/auth.php';

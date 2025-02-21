@@ -76,7 +76,7 @@
         <div class="flex flex-col justify-center items-center gap-2">
             <h2 class="text-xl text-greyMain font-ibm">Penilaian Anda</h2>
             <div class="w-auto || flex justify-center items-center || border-2 border-greyLight rounded-full px-4 py-0">
-                <p id="sss" class="text-4xl text-greyLight">
+                <p class="text-4xl text-greyLight">
                     @for ($i = 0; $i < 5; $i++)
                         <span id="userRating-{{ $i }}">
                             ★
